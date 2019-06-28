@@ -14,3 +14,10 @@ def login():
     username1 = input("username: ")
     password1 = input("password: ")
 
+menu = str(input("Login(l) or Register(r): "))
+
+if menu == "l":
+    login()
+
+else:
+    register()
