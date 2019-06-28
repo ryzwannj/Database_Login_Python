@@ -45,7 +45,6 @@ def login():
         print("Maybe, your account is not created. Go to REGISTER to create a new account.")
         print("")
         menu()
-            
 
 def menu():
     response = str(input("Login(l) or Register(r): "))
