@@ -33,10 +33,26 @@ def login():
     email1 = input("email: ")
     password1 = input("password: ") 
 
-menu = str(input("Login(l) or Register(r): "))
+    cur.execute('SELECT * FROM Users WHERE Username = ? AND Email = ? AND Password = ?', (username1,email1,password1))
 
-if menu == "l":
-    login()
+    if cur.fetchall():
+        print("Welcome " + "{" + username1 + "}" + " you are logged!")
 
-else:
-    register()
+    else:
+        print("Login Failed..")
+        print("Maybe, your account is not created.")
+        menu()
+            
+
+def menu():
+    response = str(input("Login(l) or Register(r): "))
+
+    if response == "l":
+        login()
+
+    else:
+        register()
+
+menu()
+
+
