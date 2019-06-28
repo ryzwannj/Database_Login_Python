@@ -1,4 +1,5 @@
 import sqlite3
+import getpass
 
 conn = sqlite3.connect('users.db')
 cur = conn.cursor()
@@ -16,8 +17,8 @@ def register():
     name = str(input("What's your name? "))
     username = input("Enter a username: ")
     email = input("Enter your email: ")
-    password = input("Enter a password: ")
-    verfpassword = input("Enter your password again: ")
+    password = getpass.getpass("Enter your password: ")
+    verfpassword = getpass.getpass("Enter your password again: ")
 
     while password != verfpassword:
         print("You must to enter the SAME password!")
@@ -30,9 +31,11 @@ def register():
 
     login()
 
+
+
 def login():
     username1 = input("username: ")
-    password1 = input("password: ") 
+    password1 = getpass.getpass("password: ") 
 
     cur.execute('SELECT * FROM Users WHERE Username = ? AND Password = ?', (username1,password1))
 
@@ -45,6 +48,8 @@ def login():
         print("Maybe, your account is not created. Go to REGISTER to create a new account.")
         print("")
         menu()
+
+
 
 def menu():
     response = str(input("Login(l) or Register(r): "))
