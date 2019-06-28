@@ -28,19 +28,22 @@ def register():
     AddEntry(name, username, email, password)
     conn.commit()
 
+    login()
+
 def login():
     username1 = input("username: ")
-    email1 = input("email: ")
     password1 = input("password: ") 
 
-    cur.execute('SELECT * FROM Users WHERE Username = ? AND Email = ? AND Password = ?', (username1,email1,password1))
+    cur.execute('SELECT * FROM Users WHERE Username = ? AND Password = ?', (username1,password1))
 
     if cur.fetchall():
         print("Welcome " + "{" + username1 + "}" + " you are logged!")
 
     else:
+        print("")
         print("Login Failed..")
-        print("Maybe, your account is not created.")
+        print("Maybe, your account is not created. Go to REGISTER to create a new account.")
+        print("")
         menu()
             
 
