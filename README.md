@@ -1,4 +1,4 @@
-# Python AI diary:
+# Login.py
 
 When you'll download this package and you run it for the first time. You'll see a {users.db} file, it's the database of all the users that you'll create.
 
