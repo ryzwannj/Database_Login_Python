@@ -41,7 +41,7 @@ def login():
 
     else:
         print("")
-        print("Login Failed..")
+        print("Login Failed...")
         print("Maybe, your account is not created. Go to REGISTER to create a new account.")
         print("")
         menu()
