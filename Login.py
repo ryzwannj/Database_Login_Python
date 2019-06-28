@@ -1,5 +1,11 @@
 import sqlite3
 
+conn = sqlite3.connect('users.db')
+cur = conn.cursor()
+
+cur.execute('''CREATE TABLE  IF NOT EXISTS Users
+    (id INTEGER PRIMARY KEY, Name TEXT, Username CHAR, Password CHAR)''')
+
 def register():
     name = str(input("What's your name? "))
     username = input("Enter a username: ")
