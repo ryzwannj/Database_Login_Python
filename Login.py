@@ -7,8 +7,11 @@ def register():
     verfpassword = input("Enter your password again: ")
 
     while password != verfpassword:
+        print("You must to enter the SAME password!")
         register()
         break
+    
+    print("Your account was create succefuly..")
 
 def login():
     username1 = input("username: ")
