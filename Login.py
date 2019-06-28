@@ -24,7 +24,7 @@ def register():
         register()
         break
     
-    print("Your account was create succefuly..")
+    print("Your account was create succefuly...")
     AddEntry(name, username, email, password)
     conn.commit()
 
