@@ -24,18 +24,23 @@ def register():
         print("You must to enter the SAME password!")
         register()
         break
+
+    cur.execute('SELECT * FROM Users WHERE Username = ? AND Email = ?', (username,email))
+
+    if cur.fetchall():
+        print("Your account is already created..")
+        menu()
     
-    print("Your account was create succefuly...")
-    AddEntry(name, username, email, password)
-    conn.commit()
+    else:
+        print("Your account was create succefuly...")
+        AddEntry(name, username, email, password)
+        conn.commit()
 
     login()
 
-
-
 def login():
     username1 = input("username: ")
-    password1 = getpass.getpass("password: ") 
+    password1 = getpass.getpass("password: ")
 
     cur.execute('SELECT * FROM Users WHERE Username = ? AND Password = ?', (username1,password1))
 
