@@ -57,9 +57,12 @@ def menu():
     if response == "l":
         login()
 
-    else:
+    elif response == "r":
         register()
 
+    else:
+        print("You must to enter Login(l) or Register(r): ")
+        menu()
 menu()
 
 
