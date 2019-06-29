@@ -61,7 +61,7 @@ def menu():
         register()
 
     else:
-        print("You must to enter Login(l) or Register(r): ")
+        print("Please enter either Login(l) or Register(r): ")
         menu()
 menu()
 
